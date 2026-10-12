@@ -1,0 +1,160 @@
+Authored Character Robotics (ACR)
+Reference implementation of Identity-Constrained Character Robotics, a deterministic architecture for expressive, game-governed humanoid robots.
+
+ACR combines:
+
+Immutable Core Identity ("Bedrock Soul")
+Deterministic Game Rulebook
+Physics Proxy validation
+Hardware-inspired Safety Layers
+Bounded Growth and Memory
+Sleep/Dive Skill Refinement
+Authoring and ROM Compilation Tools
+The current implementation runs entirely in simulation using a Tonybot-class 17-DOF robot model and is designed to be portable to ESP32-S3-class hardware.
+
+Current Status
+Implemented:
+
+Immutable ROM identities with checksum verification
+Simulation Engine
+Game Rulebook
+Physics Proxy
+Safety Veto
+Watchdog & Survival Matrix
+Growth Layer
+Sleep/Dive Cycle
+Authoring System
+Combat Formats
+Observation Window
+Validation:
+
+49 automated architecture tests
+Firmware golden-vector generation
+End-to-end operational demo
+Browser-based diagnostics dashboard
+Core Thesis
+Consumer robots traditionally fall between two extremes:
+
+Generative AI systems that are powerful but difficult to constrain.
+Static scripted systems that are safe but repetitive.
+ACR proposes a third path:
+
+Personality is authored before embodiment, stored as an immutable identity, and allowed to adapt only within explicitly bounded limits.
+
+The robot's identity cannot be rewritten at runtime.
+
+Experience influences behavior through a capped memory layer whose contribution is mathematically bounded and continuously monitored.
+
+Safety is enforced through deterministic rulebooks, physics validation, and hardware-level veto mechanisms.
+
+Quick Start
+Install:
+
+npm install
+Run the guided architecture demo:
+
+Shell
+npm run demo
+
+Run the full test suite:
+
+Shell
+npm test
+
+Shell
+npm run typecheck
+
+Generate firmware limits:
+
+Shell
+npm run gen:firmware
+
+Generate golden vectors:
+
+Shell
+npm run gen:golden
+
+Build and run the C++ safety core tests:
+
+Shell
+npm run test:firmware
+Observation Window
+
+Launch the diagnostics dashboard:
+
+Shell
+npx tsx runBrowserDemo.ts
+
+Open:
+
+http://localhost:3000
+
+JSON snapshot:
+
+http://localhost:3000/api/snapshot
+
+The Observation Window exposes:
+
+Memory Log size
+Action distributions
+Bias Drift (D_bias)
+Core vs Memory influence
+Identity checksum
+Real-time telemetry
+Major Subsystems
+Subsystem	PurposeCore Identity	Immutable authored personality
+Rulebook Engine	Game logic, stamina, HP, match rules
+Physics Proxy	Feasibility and stability validation
+Safety Veto	Joint, torque, thermal, and balance protection
+Growth Layer	Bounded adaptation with memory caps
+Sleep/Dive	Offline motor optimization
+Embodiment Layer	Body schema and self-model
+Dual-Layer Cognition	Identity vs execution separation
+Working Memory	Volatile tactical scratchpad
+Observation Window	Diagnostics and transparency
+Authoring Tools	Bibles, presets, ROM compiler
+Combat Engine	1v1, teams, tournaments
+Repository Structure
+Plain Text
+src/
+├── authoring/
+├── bridge/
+├── embodiment/
+├── game/
+├── growth/
+├── mind/
+├── percept/
+├── safety/
+├── robot.ts
+├── hardware.ts
+└── spec.ts
+ 
+test/
+├── architecture.test.ts
+├── subsystems.test.ts
+└── golden.vectors.generated.ts
+ 
+examples/
+firmware/
+tools/
+License
+
+Apache License 2.0
+
+See LICENSE for details.
+
+Citation
+
+If you use this work in research, please cite:
+
+BibTeX
+@software{najee2026acr,
+author = {Najee},
+title = {Authored Character Robotics},
+year = {2026},
+version = {0.1.0}
+}
+
+See CITATION.cff for full citation metadata.
+
+``bibtex @article{najee2026identity, author = {Najee}, title = {Identity-Constrained Character Robotics: An Architecture for Stable, Expressive, and Safe Consumer Humanoid Robots}, year = {2026}, note = {Research manuscript} }
