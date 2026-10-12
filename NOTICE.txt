@@ -1,0 +1,7 @@
+Authored Character Robotics (ACR)
+
+Copyright 2026 Najee
+
+Reference implementation of Identity-Constrained Character Robotics.
+
+Licensed under Apache License 2.0.
