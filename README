@@ -139,6 +139,23 @@ firmware/
 tools/
 License
 
+Successful demo execution should show:
+
+• Core Identity validation
+• Candidate generation
+• Rulebook filtering
+• Physics Proxy validation
+• Safety Veto operation
+• Growth Layer updates
+• Sleep/Dive optimization
+• Observation Window startup
+
+If you see EADDRINUSE on port 3000,
+another process is already using the dashboard port.
+The demo itself has still executed successfully.
+
+
+
 Apache License 2.0
 
 See LICENSE for details.
